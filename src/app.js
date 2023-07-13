@@ -42,6 +42,7 @@ function displayTemperature(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 function search(city) {
@@ -56,7 +57,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Mbombela");
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+search("Mbombela");

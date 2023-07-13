@@ -28,20 +28,20 @@
     <div class="container">
       <form id="search-form">
         <div class="row">
-          <div class="col-8">
+          <div class="col-9">
             <input
               type="text"
               placeholder="Type a city..."
               class="form-control shadow-sm"
+              autocomplete="off"
               id="city-input"
             />
           </div>
-          <div class="col-4">
+          <div class="col-3">
             <input
               type="submit"
               value="Search"
               class="form-control shadow-sm"
-              autocomplete="off"
               id="submit"
             />
           </div>
@@ -53,7 +53,8 @@
             <h1 id="city">Mbombela</h1>
             <h2><span id="date">Friday 10:22</span></h2>
             <h3>
-              <span id="temperature">23</span>°C <br />
+              <span id="temperature">23</span><span id="celsius-symbol">°C</span
+              ><br />
               <img src="" alt="Clear" id="icon" />
             </h3>
             <h4>Feels like: <span id="feels">20</span>°C</h4>
@@ -88,11 +89,12 @@
         <hr />
       </div>
     </div>
-    <small>
+    <small id="small">
       <a
         href="https://github.com/Gabisile-felicia/vanilla-weather-app"
         target="_blank"
         rel="noopener noreferrer"
+        id="sourcecode-link"
         >Open-source code</a
       >
       by Gabisile Sibanyoni</small

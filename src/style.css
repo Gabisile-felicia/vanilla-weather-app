@@ -10,6 +10,10 @@ h4 {
 #submit {
   background-color: #75885b;
 }
+#temperature {
+  font-size: 40px;
+}
+
 .container {
   border: 1px solid #75885b;
   border-radius: 6px;
