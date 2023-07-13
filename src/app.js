@@ -30,16 +30,33 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   feelsElement.innerHTML = Math.round(response.data.temperature.feels_like);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = Math.round(response.data.temperature.humidity);
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.time);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
 }
-let apiKey = "80b9c172ft17b407e06ebbaadc3039o3";
-let city = "Paris";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "80b9c172ft17b407e06ebbaadc3039o3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Mbombela");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

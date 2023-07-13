@@ -26,32 +26,41 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <input
-            type="text"
-            placeholder="Type a city..."
-            class="form-control shadow-sm"
-          />
-        </div>
-        <div class="col-4">
-          <input
-            type="submit"
-            value="Search"
-            class="form-control shadow-sm"
-            id="submit"
-          />
-        </div>
-        <div class="col-12">
-          <div class="card" id="border">
-            <div class="card-body">
-              <h1 id="city">Mbombela</h1>
-              <h2><span id="date">Friday 10:22</span></h2>
-              <h3><span id="temperature">23</span>°C</h3>
-              <h4>Feels like: <span id="feels">20</span>°C</h4>
-            </div>
+      <form id="search-form">
+        <div class="row">
+          <div class="col-8">
+            <input
+              type="text"
+              placeholder="Type a city..."
+              class="form-control shadow-sm"
+              id="city-input"
+            />
+          </div>
+          <div class="col-4">
+            <input
+              type="submit"
+              value="Search"
+              class="form-control shadow-sm"
+              autocomplete="off"
+              id="submit"
+            />
           </div>
         </div>
+      </form>
+      <div class="col-12">
+        <div class="card" id="border">
+          <div class="card-body">
+            <h1 id="city">Mbombela</h1>
+            <h2><span id="date">Friday 10:22</span></h2>
+            <h3>
+              <span id="temperature">23</span>°C <br />
+              <img src="" alt="Clear" id="icon" />
+            </h3>
+            <h4>Feels like: <span id="feels">20</span>°C</h4>
+          </div>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-4">
           <div class="card">
             <div class="card-body" id="description">Clear sky</div>
