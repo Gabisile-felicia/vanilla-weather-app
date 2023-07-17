@@ -7,11 +7,20 @@ h3,
 h4 {
   text-align: center;
 }
+#search-form {
+  margin-top: 10px;
+}
 #submit {
   background-color: #75885b;
 }
 #temperature {
   font-size: 40px;
+}
+#forecast {
+  text-align: center;
+}
+#small {
+  text-align: center;
 }
 
 .container {
